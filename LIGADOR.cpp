@@ -19,8 +19,8 @@ int main() {
 		}
 	}
 	else {
-		cout << "deu ruim" << endl;
-	}
+		cout <<"Erro" << endl;
+	}// erro
 
 	string modb = "";
 	ifstream file_b;
@@ -75,7 +75,7 @@ int main() {
 		cout << vet_opcodeA[i] << endl;
 	}*/
 
-	// De mod a eu ja acho o fator de correçao
+	// De mod a eu ja acho o fator de correÃ§ao
 	fator_correcao = vet_opcodeA.size();
 
 	//passando o opcode para um vetor de inteiros
@@ -110,13 +110,13 @@ int main() {
 	definitionB = modb.substr(index_td_b + 17, posicoes_td_b);
 	
 
-	//Mapeando a tabela global de definiçoes
+	//Mapeando a tabela global de definiÃ§oes
 	map<string, int>tab_def;
 	map<string, int>::iterator ittdef;
 	int aux1 = 0, aux2, end_def;
 	string rotulo_def, end_def_str;
 
-	//Percorre a tabela de definiçoes de A
+	//Percorre a tabela de definiÃ§oes de A
 	for (int i = 0; i < definitionA.length(); i++) {
 		if(definitionA[i] == ' '){
 			aux2 = i +1;
@@ -131,7 +131,7 @@ int main() {
 	}
 
 	aux1 = 0;
-	//Percorre a tabela de definiçoes de B e corrige fator de correçao
+	//Percorre a tabela de definiÃ§oes de B e corrige fator de correÃ§ao
 	for (int i = 0; i < definitionB.length(); i++) {
 		if (definitionB[i] == ' ') {
 			aux2 = i + 1;
@@ -140,12 +140,12 @@ int main() {
 		if (definitionB[i] == '\n') {
 			aux1 = i + 1;
 			end_def_str = definitionB.substr(aux2, i - aux2);
-			end_def = stoi(end_def_str) + fator_correcao;//Ja corrige o fator de correçao
+			end_def = stoi(end_def_str) + fator_correcao;//Ja corrige o fator de correÃ§ao
 			tab_def[rotulo_def] = end_def;
 		}
 	}
 
-	/*//Imprime tabela de global de Definiçoes
+	/*//Imprime tabela de global de DefiniÃ§oes
 	for (ittdef = tab_def.begin(); ittdef != tab_def.end(); ittdef++)
 	{
 		cout << ittdef->first << "  " << ittdef->second << endl;
